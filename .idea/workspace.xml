@@ -2,8 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="51e57e1b-99ee-4c26-9f77-b2e9ac8727ae" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/UserDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/UserDAOimpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Users.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,10 +43,19 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/resources" />
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
     <property name="settings.editor.selected.configurable" value="reference.projectsettings.compiler.excludes" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Siedlar\IdeaProjects\ToDoListConsole\src\main\resources" />
+    </key>
   </component>
   <component name="RunManager">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
@@ -80,44 +94,69 @@
       <option name="presentableId" value="Default" />
       <updated>1585585022671</updated>
     </task>
+    <task id="LOCAL-00001" summary="Zamiana JDBC na ORM">
+      <created>1585654818377</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1585654818377</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Zamiana JDBC na ORM" />
+    <option name="LAST_COMMIT_MESSAGE" value="Zamiana JDBC na ORM" />
   </component>
   <component name="WindowStateProjectService">
     <state x="419" y="216" key="#Project_Structure" timestamp="1585653403925">
       <screen x="0" y="0" width="1680" height="1010" />
     </state>
     <state x="419" y="216" key="#Project_Structure/0.0.1680.1010@0.0.1680.1010" timestamp="1585653403925" />
-    <state x="666" y="222" key="#com.intellij.ide.util.MemberChooser" timestamp="1585589381036">
+    <state x="582" y="361" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1585667867772">
       <screen x="0" y="0" width="1680" height="1010" />
     </state>
-    <state x="666" y="222" key="#com.intellij.ide.util.MemberChooser/0.0.1680.1010@0.0.1680.1010" timestamp="1585589381036" />
+    <state x="582" y="361" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1680.1010@0.0.1680.1010" timestamp="1585667867772" />
+    <state x="666" y="222" key="#com.intellij.ide.util.MemberChooser" timestamp="1587049242338">
+      <screen x="0" y="0" width="1680" height="1010" />
+    </state>
+    <state x="666" y="222" key="#com.intellij.ide.util.MemberChooser/0.0.1680.1010@0.0.1680.1010" timestamp="1587049242338" />
     <state x="591" y="260" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1585594190047">
       <screen x="0" y="0" width="1680" height="1010" />
     </state>
     <state x="591" y="260" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1680.1010@0.0.1680.1010" timestamp="1585594190047" />
-    <state width="1340" height="175" key="GridCell.Tab.0.bottom" timestamp="1585599594554">
+    <state x="470" y="153" key="CommitChangelistDialog2" timestamp="1585654816755">
       <screen x="0" y="0" width="1680" height="1010" />
     </state>
-    <state width="1340" height="175" key="GridCell.Tab.0.bottom/0.0.1680.1010@0.0.1680.1010" timestamp="1585599594554" />
-    <state width="1340" height="175" key="GridCell.Tab.0.center" timestamp="1585599594554">
+    <state x="470" y="153" key="CommitChangelistDialog2/0.0.1680.1010@0.0.1680.1010" timestamp="1585654816755" />
+    <state width="1339" height="175" key="GridCell.Tab.0.bottom" timestamp="1587049932138">
       <screen x="0" y="0" width="1680" height="1010" />
     </state>
-    <state width="1340" height="175" key="GridCell.Tab.0.center/0.0.1680.1010@0.0.1680.1010" timestamp="1585599594554" />
-    <state width="1340" height="175" key="GridCell.Tab.0.left" timestamp="1585599594554">
+    <state width="1339" height="175" key="GridCell.Tab.0.bottom/0.0.1680.1010@0.0.1680.1010" timestamp="1587049932138" />
+    <state width="1339" height="175" key="GridCell.Tab.0.center" timestamp="1587049932138">
       <screen x="0" y="0" width="1680" height="1010" />
     </state>
-    <state width="1340" height="175" key="GridCell.Tab.0.left/0.0.1680.1010@0.0.1680.1010" timestamp="1585599594554" />
-    <state width="1340" height="175" key="GridCell.Tab.0.right" timestamp="1585599594554">
+    <state width="1339" height="175" key="GridCell.Tab.0.center/0.0.1680.1010@0.0.1680.1010" timestamp="1587049932138" />
+    <state width="1339" height="175" key="GridCell.Tab.0.left" timestamp="1587049932138">
       <screen x="0" y="0" width="1680" height="1010" />
     </state>
-    <state width="1340" height="175" key="GridCell.Tab.0.right/0.0.1680.1010@0.0.1680.1010" timestamp="1585599594554" />
-    <state x="523" y="382" key="com.intellij.ide.util.TipDialog" timestamp="1585653279728">
+    <state width="1339" height="175" key="GridCell.Tab.0.left/0.0.1680.1010@0.0.1680.1010" timestamp="1587049932138" />
+    <state width="1339" height="175" key="GridCell.Tab.0.right" timestamp="1587049932138">
       <screen x="0" y="0" width="1680" height="1010" />
     </state>
+    <state width="1339" height="175" key="GridCell.Tab.0.right/0.0.1680.1010@0.0.1680.1010" timestamp="1587049932138" />
+    <state x="523" y="382" key="com.intellij.ide.util.TipDialog" timestamp="1585994404127">
+      <screen x="0" y="0" width="1680" height="1010" />
+    </state>
+    <state x="523" y="382" key="com.intellij.ide.util.TipDialog/0.0.1680.1010/1680.0.1920.1040@0.0.1680.1010" timestamp="1585994404127" />
     <state x="523" y="382" key="com.intellij.ide.util.TipDialog/0.0.1680.1010@0.0.1680.1010" timestamp="1585653279728" />
     <state x="523" y="155" width="866" height="804" key="find.popup" timestamp="1585653519699">
       <screen x="0" y="0" width="1680" height="1010" />
     </state>
     <state x="523" y="155" width="866" height="804" key="find.popup/0.0.1680.1010@0.0.1680.1010" timestamp="1585653519699" />
+    <state x="209" y="253" key="new project wizard" timestamp="1586000497211">
+      <screen x="0" y="0" width="1680" height="1010" />
+    </state>
+    <state x="209" y="253" key="new project wizard/0.0.1680.1010/1680.0.1920.1040@0.0.1680.1010" timestamp="1586000497211" />
   </component>
 </project>

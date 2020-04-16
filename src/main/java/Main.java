@@ -1,21 +1,12 @@
-import java.sql.*;
+import java.util.List;
 
 public class Main {
     public static void main(String[] args){
-        Connection conn=null;
-        Statement statement=null;
-        try {
 
-            conn=DriverManager.getConnection("jdbc:mysql://localhost:3306/todolist?serverTimezone=UTC","root","soad666");
-            statement=conn.createStatement();
-            ResultSet wyynik=statement.executeQuery("Select * from users");
-            while (wyynik.next()){
-                System.out.println(wyynik.getString(2));
-            }
-        } catch ( SQLException e) {
-            e.printStackTrace();
-        }
-
+    UserDAOimpl userDao=new UserDAOimpl();
+    userDao.openCurrentSession();
+    List<Users> listaUzytkownikow=userDao.getAll();
+    listaUzytkownikow.forEach((x)-> System.out.println(x));
     }
 
 }
