@@ -29,11 +29,17 @@ public class UsersService {
         userDAOimpl.closeCurrentSession();
         return user;
     }
+    public Users getByLoginAndPassword(String login, String password) {
+        userDAOimpl.openCurrentSession();
+    Users user=userDAOimpl.getByLoginAndPassword(login,password);
+        userDAOimpl.closeCurrentSession();
+        return user;
+    }
     public List<Users> findAll() {
         userDAOimpl.openCurrentSession();
-        List<Users> books = userDAOimpl.getAll();
+        List<Users> users = userDAOimpl.getAll();
         userDAOimpl.closeCurrentSession();
-        return books;
+        return users;
     }
     public void deleteAll() {
         userDAOimpl.openCurrentSessionwithTransaction();

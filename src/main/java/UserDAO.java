@@ -4,7 +4,7 @@ public interface UserDAO {
 
 
        Users get(int id);
-
+     Users getByLoginAndPassword(String login,String password);
         List<Users> getAll();
 
         void save(Users user);

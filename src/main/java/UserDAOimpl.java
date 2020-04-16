@@ -63,6 +63,16 @@ public class UserDAOimpl implements UserDAO {
     }
 
     @Override
+    public Users getByLoginAndPassword(String login, String password) {
+
+
+        return  (Users) getCurrentSession().createQuery("FROM Users user WHERE user.login = :status AND user.password = :status2")
+                .setParameter("status", login)
+                .setParameter("status2",password)
+                .getSingleResult();
+    }
+
+    @Override
     public void save(Users user) {
     getCurrentSession().save(user);
     }
