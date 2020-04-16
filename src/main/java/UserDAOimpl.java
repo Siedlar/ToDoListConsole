@@ -64,16 +64,25 @@ public class UserDAOimpl implements UserDAO {
 
     @Override
     public void save(Users user) {
-
+    getCurrentSession().save(user);
     }
 
     @Override
-    public void update(Users user, String[] params) {
+    public void deleteAll() {
 
+            List<Users> entityList = getAll();
+            for (Users entity : entityList) {
+                delete(entity);
+            }
+    }
+
+    @Override
+    public void update(Users user) {
+        getCurrentSession().update(user);
     }
 
     @Override
     public void delete(Users user) {
-
+        getCurrentSession().delete(user);
     }
 }

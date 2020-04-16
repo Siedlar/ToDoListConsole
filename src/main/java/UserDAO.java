@@ -9,8 +9,8 @@ public interface UserDAO {
 
         void save(Users user);
 
-        void update(Users user, String[] params);
+        void update(Users user);
 
         void delete(Users user);
-
+        void deleteAll();
 }
