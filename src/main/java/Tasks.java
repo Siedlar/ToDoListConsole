@@ -1,5 +1,5 @@
 import javax.persistence.*;
-import java.util.Date;
+import java.sql.Date;
 
 @Entity
 @Table(name="tasks")
@@ -11,14 +11,14 @@ public class Tasks {
     @Column(name="nazwaZadania")
     private String nazwaZadania;
     @Column(name="data")
-    private Date data;
+    private java.sql.Date data;
     @Column(name="czasTrwania")
     private int czasTrwania;
 
     public Tasks() {
     }
 
-    @ManyToOne(cascade =CascadeType.ALL)
+    @ManyToOne(cascade =CascadeType.ALL, fetch = FetchType.EAGER)
     @JoinColumn(name="userID",referencedColumnName="id")
     private Users user;
 

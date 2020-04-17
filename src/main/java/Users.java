@@ -14,10 +14,20 @@ public class Users {
     private String nazwisko;
     @Column(name="login")
     private String login;
+    @Column(name="email")
+    private String email;
     @Column(name="password")
     private String password;
-    @OneToMany(mappedBy = "user" ,cascade =CascadeType.ALL)
+    @OneToMany(mappedBy = "user" ,cascade =CascadeType.ALL,fetch=FetchType.EAGER)
 private List<Tasks> listaZadan;
+
+    public Users(String imie, String nazwisko, String login, String password, String email) {
+        this.imie = imie;
+        this.nazwisko = nazwisko;
+        this.login = login;
+        this.email = email;
+        this.password = password;
+    }
 
     public List<Tasks> getListaZadan() {
         return listaZadan;
@@ -51,9 +61,9 @@ private List<Tasks> listaZadan;
         this.password = password;
     }
 
-    public Users(String imie, String nazwisko) {
-        this.imie = imie;
-        this.nazwisko = nazwisko;
+    public Users(String login, String password) {
+        this.login = login;
+        this.password = password;
     }
 
     public Users(String imie, String nazwisko, String login, String password) {
@@ -90,4 +100,5 @@ private List<Tasks> listaZadan;
 
     public Users() {
     }
+
 }

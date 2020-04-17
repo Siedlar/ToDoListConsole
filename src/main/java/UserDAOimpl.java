@@ -98,14 +98,17 @@ public class UserDAOimpl implements UserDAO {
     public void delete(Users user) {
         getCurrentSession().delete(user);
     }
-  public void add(Tasks tasks){
-      Users user=getByLoginAndPassword("Krystian", "qwerty");
+  public void add(Tasks tasks,Users user){
      if(user.getListaZadan().isEmpty()){
-         user.setListaZadan(new ArrayList<>());
-     }
+          user.setListaZadan(new ArrayList<>());
+      }
      user.getListaZadan().add(tasks);
       tasks.setUser(user);
-     user.getListaZadan().forEach((x)-> System.out.println(x));
      getCurrentSession().save(user);
   }
-}
+    public List<Tasks> wypiszZadaniaUser(){
+
+        return  getByLoginAndPassword("Krystian", "qwerty").getListaZadan();
+    }
+    }
+

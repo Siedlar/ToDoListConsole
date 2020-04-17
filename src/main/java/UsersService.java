@@ -1,3 +1,5 @@
+import javafx.concurrent.Task;
+
 import java.sql.Date;
 import java.time.LocalDate;
 import java.util.List;
@@ -54,9 +56,16 @@ public class UsersService {
         userDAOimpl.delete(user);
         userDAOimpl.closeCurrentSessionwithTransaction();
     }
-    public void addTasks(){
+    public void addTasks(Users user, Tasks task){
         userDAOimpl.openCurrentSessionwithTransaction();
-        userDAOimpl.add(new Tasks("sprzatanie",new Date(2020-04-20),5));
+        userDAOimpl.add(task,user);
         userDAOimpl.closeCurrentSessionwithTransaction();
+    }
+    public void wypiszZadaniaUser(Users users){
+        userDAOimpl.openCurrentSessionwithTransaction();
+        List<Tasks> lista= userDAOimpl.getByLoginAndPassword(users.getLogin(),users.getPassword()).getListaZadan();
+        lista.forEach((x)-> System.out.println(x));
+        userDAOimpl.closeCurrentSession();
+
     }
 }
