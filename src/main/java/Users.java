@@ -1,4 +1,5 @@
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name="users")
@@ -15,6 +16,16 @@ public class Users {
     private String login;
     @Column(name="password")
     private String password;
+    @OneToMany(mappedBy = "user")
+private List<Tasks> listaZadan;
+
+    public List<Tasks> getListaZadan() {
+        return listaZadan;
+    }
+
+    public void setListaZadan(List<Tasks> listaZadan) {
+        this.listaZadan = listaZadan;
+    }
 
     public int getId() {
         return id;
