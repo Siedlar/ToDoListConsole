@@ -1,3 +1,5 @@
+import java.sql.Date;
+import java.time.LocalDate;
 import java.util.List;
 
 public class UsersService {
@@ -50,6 +52,11 @@ public class UsersService {
     public void delete(Users user) {
         userDAOimpl.openCurrentSessionwithTransaction();
         userDAOimpl.delete(user);
+        userDAOimpl.closeCurrentSessionwithTransaction();
+    }
+    public void addTasks(){
+        userDAOimpl.openCurrentSessionwithTransaction();
+        userDAOimpl.add(new Tasks("sprzatanie",new Date(2020-04-20),5));
         userDAOimpl.closeCurrentSessionwithTransaction();
     }
 }

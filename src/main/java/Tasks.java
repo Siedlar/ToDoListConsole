@@ -14,8 +14,12 @@ public class Tasks {
     private Date data;
     @Column(name="czasTrwania")
     private int czasTrwania;
-    @ManyToOne
-    @JoinColumn(name="userID")
+
+    public Tasks() {
+    }
+
+    @ManyToOne(cascade =CascadeType.ALL)
+    @JoinColumn(name="userID",referencedColumnName="id")
     private Users user;
 
     @Override
@@ -23,7 +27,13 @@ public class Tasks {
         return "Tasks{" +
                 "nazwaZadania='" + nazwaZadania + '\'' +
                 ", data=" + data +
-                ", czasTrwania=" + czasTrwania ;
+                ", czasTrwania=" + czasTrwania + " " +user.getId();
+    }
+
+    public Tasks(String nazwaZadania, Date data, int czasTrwania) {
+        this.nazwaZadania = nazwaZadania;
+        this.data = data;
+        this.czasTrwania = czasTrwania;
     }
 
     public Tasks(String nazwaZadania, Date data, int czasTrwania, Users user) {

@@ -16,7 +16,7 @@ public class Users {
     private String login;
     @Column(name="password")
     private String password;
-    @OneToMany(mappedBy = "user")
+    @OneToMany(mappedBy = "user" ,cascade =CascadeType.ALL)
 private List<Tasks> listaZadan;
 
     public List<Tasks> getListaZadan() {

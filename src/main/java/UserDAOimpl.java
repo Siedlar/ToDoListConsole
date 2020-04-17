@@ -3,6 +3,8 @@ import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.hibernate.cfg.Configuration;
 
+import javax.lang.model.type.ArrayType;
+import java.util.ArrayList;
 import java.util.List;
 
 public class UserDAOimpl implements UserDAO {
@@ -33,6 +35,7 @@ public class UserDAOimpl implements UserDAO {
         SessionFactory sessionFactory=new Configuration()
                 .configure("hibernate.cfg.xml")
                 .addAnnotatedClass(Users.class)
+                .addAnnotatedClass(Tasks.class)
                 .buildSessionFactory();
         return sessionFactory;
     }
@@ -95,4 +98,14 @@ public class UserDAOimpl implements UserDAO {
     public void delete(Users user) {
         getCurrentSession().delete(user);
     }
+  public void add(Tasks tasks){
+      Users user=getByLoginAndPassword("Krystian", "qwerty");
+     if(user.getListaZadan().isEmpty()){
+         user.setListaZadan(new ArrayList<>());
+     }
+     user.getListaZadan().add(tasks);
+      tasks.setUser(user);
+     user.getListaZadan().forEach((x)-> System.out.println(x));
+     getCurrentSession().save(user);
+  }
 }

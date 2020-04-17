@@ -16,8 +16,7 @@ public class Main {
             }
             else if(a==2)
             {
-             Users user=usersService.getByLoginAndPassword("Krystian","Siedlarski");
-                System.out.println("Witaj"+user.toString());
+                usersService.addTasks();
             }
             else if(a==3)
             {
