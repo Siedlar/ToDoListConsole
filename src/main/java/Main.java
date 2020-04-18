@@ -1,4 +1,5 @@
 import javax.persistence.NoResultException;
+import java.sql.Date;
 import java.sql.SQLIntegrityConstraintViolationException;
 import java.util.List;
 import java.util.Scanner;
@@ -64,7 +65,14 @@ public class Main {
                System.out.println("Wybierz poprawną liczbę!!!");
             }
     }while(a!=4 && a!=3 && a!=2 && a!=1 ||user==null);
-        System.out.println("essa");
+        int userMenu;
+        System.out.println("-----MENU-----\n1.Wypisz liste aktualnych zadan\n2.Dodaj zadanie");
+        userMenu=PobieranieDanych.wybierzLiczbe();
+        if(userMenu==1){
+            usersService.wypiszZadaniaUser(user);
+        }else if(userMenu==2){
+            usersService.addTasks(user,new Tasks("sprzatanie",new Date(new java.util.Date().getTime()),60));
+        }
     }
 
 }

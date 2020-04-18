@@ -104,12 +104,13 @@ public class UserDAOimpl implements UserDAO {
         getCurrentSession().delete(user);
     }
   public void add(Tasks tasks,Users user){
-     if(user.getListaZadan().isEmpty()){
-          user.setListaZadan(new ArrayList<>());
-      }
-     user.getListaZadan().add(tasks);
+     List<Tasks> lista=new ArrayList<>();
+      lista.add(tasks);
+       user.setListaZadan(lista);
       tasks.setUser(user);
-     getCurrentSession().save(user);
+     getCurrentSession().saveOrUpdate(user);
+
+
   }
     public List<Tasks> wypiszZadaniaUser(){
 

@@ -65,9 +65,8 @@ public class UsersService {
     }
     public void wypiszZadaniaUser(Users users){
         userDAOimpl.openCurrentSessionwithTransaction();
-        List<Tasks> lista= userDAOimpl.getByLoginAndPassword(users.getLogin(),users.getPassword()).getListaZadan();
-        lista.forEach((x)-> System.out.println(x));
-        userDAOimpl.closeCurrentSession();
+       userDAOimpl.get(users.getId()).getListaZadan().forEach((x)-> System.out.println(x));
+        userDAOimpl.closeCurrentSessionwithTransaction();
 
     }
 }
