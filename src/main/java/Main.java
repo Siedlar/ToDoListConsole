@@ -1,4 +1,5 @@
 import javax.persistence.NoResultException;
+import java.sql.SQLIntegrityConstraintViolationException;
 import java.util.List;
 import java.util.Scanner;
 
@@ -22,18 +23,29 @@ public class Main {
                 }
             }
             else if(a==2)
-            {    int b;
-                do{
-                System.out.println("1.Zaloguj z podanie wszystkich danych\n2.Uzupelnie dane pózniej");
-                b=PobieranieDanych.wybierzLiczbe();
-                if(b==1){
-                    usersService.save(new Users(PobieranieDanych.wpiszImie(),PobieranieDanych.wpiszNazwisko(),PobieranieDanych.wpiszLogin(),PobieranieDanych.wpiszHaslo(),PobieranieDanych.wpiszEmail()));
-                    break;
-                }else if(b==2){
-                    usersService.save(new Users(PobieranieDanych.wpiszLogin(),PobieranieDanych.wpiszHaslo()));
-                    break;
-                }
-                    System.out.println("Wybierz poprawna liczbe");
+            {    int b=3;
+                do {
+                    try {
+
+
+                    System.out.println("1.Zaloguj z podanie wszystkich danych\n2.Uzupelnie dane pózniej");
+                    b = PobieranieDanych.wybierzLiczbe();
+
+                    if (b == 1) {
+                        usersService.save(new Users(PobieranieDanych.wpiszImie(), PobieranieDanych.wpiszNazwisko(), PobieranieDanych.wpiszLogin(), PobieranieDanych.wpiszHaslo(), PobieranieDanych.wpiszEmail()));
+                        break;
+                    } else if (b == 2) {
+                        usersService.save(new Users(PobieranieDanych.wpiszLogin(), PobieranieDanych.wpiszHaslo()));
+                        break;
+                    }}catch   ( javax.persistence.PersistenceException  ex){
+                            System.out.println("Uzytkownik istnieje w bazie");
+                            b=-1;
+
+                    }
+                    if(b==-1){
+
+                    }else{
+                    System.out.println("Wybierz poprawna liczbe");}
                 } while(b!=1 &&b!=2);
             }
             else if(a==3)

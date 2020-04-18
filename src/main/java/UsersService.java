@@ -1,6 +1,7 @@
 import javafx.concurrent.Task;
 
 import java.sql.Date;
+import java.sql.SQLIntegrityConstraintViolationException;
 import java.time.LocalDate;
 import java.util.List;
 
@@ -14,7 +15,7 @@ public class UsersService {
     public UserDAOimpl getUserDAOimpl() {
         return userDAOimpl;
     }
-    public void save(Users user) {
+    public void save(Users user) throws javax.persistence.PersistenceException {
         userDAOimpl.openCurrentSessionwithTransaction();
         userDAOimpl.save(user);
         userDAOimpl.closeCurrentSessionwithTransaction();

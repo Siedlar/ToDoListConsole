@@ -1,3 +1,4 @@
+import java.sql.SQLIntegrityConstraintViolationException;
 import java.util.List;
 
 public interface UserDAO {
@@ -7,7 +8,7 @@ public interface UserDAO {
      Users getByLoginAndPassword(String login,String password);
         List<Users> getAll();
 
-        void save(Users user);
+        void save(Users user) throws SQLIntegrityConstraintViolationException;
 
         void update(Users user);
 

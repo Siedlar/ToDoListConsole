@@ -4,6 +4,7 @@ import org.hibernate.Transaction;
 import org.hibernate.cfg.Configuration;
 
 import javax.lang.model.type.ArrayType;
+import java.sql.SQLIntegrityConstraintViolationException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -76,9 +77,12 @@ public class UserDAOimpl implements UserDAO {
     }
 
     @Override
-    public void save(Users user) {
+    public void save(Users user)   throws javax.persistence.PersistenceException{
+
     getCurrentSession().save(user);
-    }
+}
+
+
 
     @Override
     public void deleteAll() {
