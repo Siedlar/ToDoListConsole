@@ -23,14 +23,14 @@ public class PobieranieDanych {
         Scanner in=new Scanner(System.in);
         System.out.println("Podaj hasło");
         String haslo=in.nextLine();
-        return haslo;
+        return haslo.trim();
     }
     public static String wpiszLogin(){
         Scanner in=new Scanner(System.in);
         in=new Scanner(System.in);
         System.out.println("Podaj login");
         String login=in.nextLine();
-        return login;
+        return login.trim();
     }
     public static String wpiszImie(){
         Scanner in=new Scanner(System.in);

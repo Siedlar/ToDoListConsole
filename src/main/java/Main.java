@@ -33,12 +33,14 @@ public class Main {
 
                     if (b == 1) {
                         usersService.save(new Users(PobieranieDanych.wpiszImie(), PobieranieDanych.wpiszNazwisko(), PobieranieDanych.wpiszLogin(), PobieranieDanych.wpiszHaslo(), PobieranieDanych.wpiszEmail()));
+
                         break;
                     } else if (b == 2) {
                         usersService.save(new Users(PobieranieDanych.wpiszLogin(), PobieranieDanych.wpiszHaslo()));
                         break;
                     }}catch   ( javax.persistence.PersistenceException  ex){
                             System.out.println("Uzytkownik istnieje w bazie");
+                        usersService.getUserDAOimpl().getCurrentTransaction().rollback();
                             b=-1;
 
                     }

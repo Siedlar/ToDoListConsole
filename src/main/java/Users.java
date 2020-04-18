@@ -1,3 +1,4 @@
+import javax.annotation.Generated;
 import javax.persistence.*;
 import java.util.List;
 
@@ -6,7 +7,7 @@ import java.util.List;
 public class Users {
     @Id
     @Column(name="id")
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
     @Column(name="Imie")
     private String imie;
@@ -18,7 +19,9 @@ public class Users {
     private String email;
     @Column(name="password")
     private String password;
-    @OneToMany(mappedBy = "user" ,cascade =CascadeType.ALL,fetch=FetchType.EAGER)
+    @Column(name="dataZalozenia",insertable = false)
+    private String dataZalozenia;
+    @OneToMany(mappedBy = "user" ,cascade =CascadeType.ALL,fetch=FetchType.LAZY)
 private List<Tasks> listaZadan;
 
     public Users(String imie, String nazwisko, String login, String password, String email) {
@@ -28,6 +31,7 @@ private List<Tasks> listaZadan;
         this.email = email;
         this.password = password;
     }
+
 
     public List<Tasks> getListaZadan() {
         return listaZadan;
@@ -95,8 +99,13 @@ private List<Tasks> listaZadan;
                 "id=" + id +
                 ", imie='" + imie + '\'' +
                 ", nazwisko='" + nazwisko + '\'' +
-                '}';
+                ", login='" + login + '\'' +
+                ", email='" + email + '\'' +
+                ", password='" + password + '\'' +
+                ", dataZalozenia='" + dataZalozenia;
     }
+
+
 
     public Users() {
     }

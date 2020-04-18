@@ -4,6 +4,7 @@ import org.hibernate.Transaction;
 import org.hibernate.cfg.Configuration;
 
 import javax.lang.model.type.ArrayType;
+import javax.transaction.Transactional;
 import java.sql.SQLIntegrityConstraintViolationException;
 import java.util.ArrayList;
 import java.util.List;
